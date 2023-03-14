@@ -14,7 +14,8 @@ app.use(express.json());
 app.use(cookieParser())
 //mongoose
 // mongoose.connect('mongodb://localhost:27017/BlogMERN');
-mongoose.connect('mongodb+srv://FawadRahman55:ISJ6YMDcDzHhWeiN@cluster0.sevd1id.mongodb.net/?retryWrites=true&w=majority');
+let mongoURL='mongodb+srv://FawadRahman55:ISJ6YMDcDzHhWeiN@cluster0.sevd1id.mongodb.net/?retryWrites=true&w=majority'
+mongoose.connect(mongoURL);
 //schemas
 let userSchema=new mongoose.Schema({
     email:{
