@@ -14,6 +14,8 @@ const About = () => {
     let fetchAbout = async () => {
         try {
             let val = await axios.get(`/userE/userE/${getEmail}`);
+            console.log('getEmail+val', getEmail)
+            console.log('getEmail+val2', val)
             if(val.status===200)
             {
                 // console.log(val.data);
@@ -22,12 +24,13 @@ const About = () => {
             }
             else
             {
-                alert('please login first to proceed further!!!')
+                // alert('please login first to proceed further!!!')
+                alert(val)
                 Navigate('/login') 
             }
         } catch (error) {
-            alert('please login first to proceed further!!!')
-             Navigate('/login') 
+            alert('Error,please try again later!!!')
+             // Navigate('/login') 
         }
 
         // let val2 = await axios.get(`/blogs/${val.data._id}`);
